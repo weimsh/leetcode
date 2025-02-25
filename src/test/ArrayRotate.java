@@ -2,7 +2,7 @@ package test;
 
 import java.util.Arrays;
 
-public class RotateArray {
+public class ArrayRotate {
 	// 算法： 实现旋转N个整数的数组，将每个整数循环向右移M(M>=0)个位置
 	// 如：6,2,{1,2,3,4,5,6} -> {5,6,1,2,3,4}
 	// 要求：时间复杂度O(n)，空间复杂度O(1)
