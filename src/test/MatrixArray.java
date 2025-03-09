@@ -6,9 +6,12 @@ public class MatrixArray {
 	// 算法：顺时针旋转n*n的矩阵（二维数组）
 	// 要求：时间复杂度O(n^2)，空间复杂度O(1)
 	// 如：[[1,2,3], [4,5,6], [7,8,9]] -> [[7,4,1], [8,5,2], [9,6,3]]
-
 	public static void main(String[] args) {
-		int[][] matrix = new int[][] { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 } };
+		int[][] matrix = new int[][] {
+			new int[] { 1, 2, 3 },
+			new int[] { 4, 5, 6 },
+			new int[] { 7, 8, 9 }
+		};
 
 		rotate(matrix);
 		System.out.println(Arrays.deepToString(matrix));

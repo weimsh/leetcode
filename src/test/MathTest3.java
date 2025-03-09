@@ -1,9 +1,7 @@
 package test;
 
 public class MathTest3 {
-
-	// 算法：实现 pow(x, n) ，即计算 x 的整数 n 次幂函数（即，x^n ）。
-
+	// 算法：实现 pow(x, n)，即计算x的整数n次幂函数（即x^n）。
 	public static double myPow(double x, int n) {
 		return n >= 0 ? qpow(x, n) : 1 / qpow(x, -(long) n);
 	}

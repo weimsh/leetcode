@@ -7,37 +7,7 @@ public class LinkedList5 {
 	// 算法1：删除有序链表中重复的元素
 	// 如：{-1,1,1,2,2,3} -> {-1,1,2,3}
 	// 要求：时间复杂度为O(n)，空间复杂度为O(1)
-
-	// 算法2：删除有序链表中重复的元素，只保留出现一次的元素
-	// 如：{-1,1,1,2,2,3} -> {-1,3}
-	// 要求：时间复杂度为O(n)，空间复杂度为O(n)。进阶：空间复杂度为O(1)
-
-	public static Node toNode(int... values) {
-		Node dummy = new Node(0);
-		Node curr = dummy;
-		for (int val : values) {
-			curr.next = new Node(val);
-			curr = curr.next;
-		}
-		return dummy.next;
-	}
-
-	public static void main(String[] args) {
-		Node n1 = toNode(-1, 1);
-
-		// Node n2 = removeDuplicated(n1);
-		Node n2 = removeDuplicated21(n1);
-		println(n2);
-	}
-
-	private static void println(Node n) {
-		while (n != null) {
-			System.out.println(n.val);
-			n = n.next;
-		}
-	}
-
-	private static Node removeDuplicated(Node n1) {// 算法1
+	public static Node removeDuplicated(Node n1) {// 算法1
 		Node head = n1;
 		Node prev = null;
 		while (head != null) {
@@ -52,7 +22,18 @@ public class LinkedList5 {
 		return n1;
 	}
 
-	private static Node removeDuplicated2(Node n1) {// 算法2：空间复杂度O(n)
+	public static void main(String[] args) {
+		Node n1 = toNode(-1, 1);
+
+		// Node n2 = removeDuplicated(n1);
+		Node n2 = removeDuplicated21(n1);
+		println(n2);
+	}
+
+	// 算法2：删除有序链表中重复的元素，只保留出现一次的元素
+	// 如：{-1,1,1,2,2,3} -> {-1,3}
+	// 要求：时间复杂度为O(n)，空间复杂度为O(n)。进阶：空间复杂度为O(1)
+	public static Node removeDuplicated2(Node n1) {// 算法2：空间复杂度O(n)
 		if (n1 == null || n1.next == null)
 			return n1;
 
@@ -85,7 +66,7 @@ public class LinkedList5 {
 		return dummy.next;
 	}
 
-	private static Node removeDuplicated21(Node n1) {// 算法2：空间复杂度O(1)
+	public static Node removeDuplicated21(Node n1) {// 算法2：空间复杂度O(1)
 		if (n1 == null || n1.next == null)
 			return n1;
 
@@ -108,7 +89,24 @@ public class LinkedList5 {
 		return dummy.next;
 	}
 
-	private static class Node {
+	private static Node toNode(int... values) {
+		Node dummy = new Node(0);
+		Node curr = dummy;
+		for (int val : values) {
+			curr.next = new Node(val);
+			curr = curr.next;
+		}
+		return dummy.next;
+	}
+
+	private static void println(Node n) {
+		while (n != null) {
+			System.out.println(n.val);
+			n = n.next;
+		}
+	}
+
+	public static class Node {
 		private int val;
 		private Node next;
 

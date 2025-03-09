@@ -4,13 +4,11 @@ public class Palindrome {
 	// 算法：求给定字符串中最大的回文子串
 	// 如：babad -> bab 或者 aba
 	// 要求：时间复杂度O(n^2)，空间复杂度O(1)
-
 	public static String longestPalindrome(String s) {
 		if (s == null || s.length() < 1)
 			return "";
 
 		int start = 0, end = 0;
-
 		for (int i = 0; i < s.length(); i++) {
 			// 以单个字符为中心扩展
 			int len1 = expandAroundCenter(s, i, i);
@@ -26,7 +24,6 @@ public class Palindrome {
 				end = i + len / 2;
 			}
 		}
-
 		// 返回最长的回文子串
 		return s.substring(start, end + 1);
 	}
@@ -41,15 +38,8 @@ public class Palindrome {
 		return right - left - 1;
 	}
 
-	public static void main1(String[] args) {
+	public static void main(String[] args) {
 		String s = "babad";
 		System.out.println("Longest Palindromic Substring: " + longestPalindrome(s));
 	}
-	
-	public static void main(String[] args) {
-		int i = Integer.MAX_VALUE/10;
-		System.out.println(i);
-		System.out.println(Integer.MAX_VALUE);
-	}
-
 }

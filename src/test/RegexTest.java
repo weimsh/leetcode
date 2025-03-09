@@ -1,12 +1,10 @@
 package test;
 
 public class RegexTest {
-
-	// 算法：给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
-	// '.' 匹配任意单个字符
-	// '*' 匹配零个或多个前面的那一个元素
-	// 所谓匹配，是要涵盖 整个 字符串 s 的，而不是部分字符串。
-
+	// 算法：给你一个字符串s和一个字符规律p，请你来实现一个支持'.'和'*'的正则表达式匹配。
+	// '.'：匹配任意单个字符
+	// '*'：匹配零个或多个前面的那一个元素
+	// 所谓匹配，是要 涵盖 整个字符串s的，而不是部分字符串。
 	private Boolean[][] f;
 	private String s;
 	private String p;
@@ -38,7 +36,7 @@ public class RegexTest {
 		return f[i][j] = res;
 	}
 
-	private boolean isMatch2(String s, String p) {// 方法二：动态规划
+	public boolean isMatch2(String s, String p) {// 方法二：动态规划
 		int m = s.length(), n = p.length();
 		boolean[][] f = new boolean[m + 1][n + 1];
 		f[0][0] = true;
@@ -55,10 +53,8 @@ public class RegexTest {
 					if (p.charAt(j - 2) == '.' || p.charAt(j - 2) == s.charAt(i - 1)) {
 						f[i][j] |= f[i - 1][j];// *表示一个或多个前面的元素
 					}
-					// System.out.println("i:" + i + ",j:" + j + "," + f[i][j]);
 				} else if (p.charAt(j - 1) == '.' || p.charAt(j - 1) == s.charAt(i - 1)) {
 					f[i][j] = f[i - 1][j - 1];
-					// System.out.println("i:" + i + ",j:" + j + "," + f[i][j]);
 				}
 			}
 		}
@@ -81,5 +77,4 @@ public class RegexTest {
 		System.out.println("11: " + rt.isMatch2("aaab", "a*bb*"));// 11
 		System.out.println("12: " + rt.isMatch2("aaab", "acab"));// 12
 	}
-
 }

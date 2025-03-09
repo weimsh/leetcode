@@ -4,7 +4,6 @@ public class LinkedList2 {
 	// 合并两个已排序的链表
 	// 如：[{1,2,4}, {1,3,4}] -> {1,1,2,3,4,4}
 	// 要求：时间和空间复杂度为O(m+n)，m和n分别为两个链表的长度
-
 	public static void main(String[] args) {
 		Node n1 = new Node(1);
 		n1.next = new Node(2);
@@ -25,7 +24,7 @@ public class LinkedList2 {
 		}
 	}
 
-	private static Node merge(Node n1, Node n2) {// 方法1：递归
+	public static Node merge(Node n1, Node n2) {// 方法1：递归
 		if (n1 == null)
 			return n2;
 		if (n2 == null)
@@ -39,7 +38,7 @@ public class LinkedList2 {
 		}
 	}
 
-	private static Node merge2(Node n1, Node n2) {// 方法2：迭代
+	public static Node merge2(Node n1, Node n2) {// 方法2：迭代
 		Node dummy = new Node(0);
 		Node curr = dummy;
 		while (n1 != null && n2 != null) {
@@ -60,7 +59,7 @@ public class LinkedList2 {
 		return dummy.next;
 	}
 
-	private static class Node {
+	public static class Node {
 		private int val;
 		private Node next;
 
@@ -73,5 +72,4 @@ public class LinkedList2 {
 			return "" + val;
 		}
 	}
-
 }

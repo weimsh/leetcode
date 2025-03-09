@@ -3,9 +3,9 @@ package test;
 import java.util.LinkedList;
 import java.util.Queue;
 
+// 算法：二叉树遍历
 public class BinaryTree {
-
-	static class TreeNode {
+	public static class TreeNode {
 		private int val;
 		private TreeNode left;
 		private TreeNode right;
@@ -18,7 +18,7 @@ public class BinaryTree {
 		}
 	}
 
-	private static void breadthFirstSearch(TreeNode root) {// BFS
+	public static void breadthFirstSearch(TreeNode root) {// BFS，广度遍历或层次遍历
 		Queue<TreeNode> queue = new LinkedList<>();
 		queue.offer(root);
 		while(!queue.isEmpty()) {
@@ -33,7 +33,7 @@ public class BinaryTree {
 		}
 	}
 
-	private static void depthFirstSearch(TreeNode root) {// DFS
+	public static void depthFirstSearch(TreeNode root) {// DFS，深度遍历
 		System.out.println(root.val);
 		if (root.left != null) {
 			depthFirstSearch(root.left);
@@ -65,5 +65,4 @@ public class BinaryTree {
 		right.right = right3;
 		return node;
 	}
-
 }

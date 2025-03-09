@@ -4,9 +4,8 @@ import java.util.Arrays;
 
 public class BinaryArray {
 	// 算法：实现无重复数字的有序数组的二分查找：
-	// 如[-1,0,1,2,3]查找2，返回下标3；查找4，返回下标-1
+	// 如：[-1,0,1,2,3]数组中查找2，返回下标3；查找4，返回下标-1。
 	// 要求：时间复杂度O(logn)，空间复杂度O(1)
-
 	public static void main(String[] args) {
 		int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 0 };
 		mergeSort(array);
@@ -23,7 +22,7 @@ public class BinaryArray {
 		System.out.println(index);
 	}
 
-	private static int search(int[] array, int target) {// 二分查找
+	public static int search(int[] array, int target) {// 二分查找
 		if (array == null || array.length == 0) {
 			return -1;
 		}
@@ -42,13 +41,12 @@ public class BinaryArray {
 		return -1;
 	}
 
-	private static void quickSort(int[] array) {// 快速排序。时间复杂度O(nlogn)，最坏情况O(n^2)，空间复杂度O(1)
+	public static void quickSort(int[] array) {// 快速排序。时间复杂度O(nlogn)，最坏情况O(n^2)，空间复杂度O(1)
 		if (array == null || array.length <= 1) {
 			return;
 		}
 		quickSort(array, 0, array.length - 1);
 	}
-
 	private static void quickSort(int[] array, int left, int right) {
 		if (left < right) {
 			int pivotIndex = partition(array, left, right);
@@ -56,7 +54,6 @@ public class BinaryArray {
 			quickSort(array, pivotIndex + 1, right);
 		}
 	}
-
 	private static int partition(int[] array, int left, int right) {
 		int pivot = array[right];// 选择最后一个元素作为基准元素
 		int i = left - 1;
@@ -69,21 +66,19 @@ public class BinaryArray {
 		swap(array, i + 1, right);// 将基准元素移动至正确位置
 		return i + 1;
 	}
-
 	private static void swap(int[] array, int i, int j) {
 		int temp = array[i];
 		array[i] = array[j];
 		array[j] = temp;
 	}
 
-	private static void mergeSort(int[] array) {// 归并排序。时间复杂度O(nlogn)，空间复杂度O(n)
+	public static void mergeSort(int[] array) {// 归并排序。时间复杂度O(nlogn)，空间复杂度O(n)
 		if (array == null || array.length <= 1) {
 			return;
 		}
 		int[] temp = new int[array.length];
 		mergeSort(array, 0, array.length - 1, temp);
 	}
-
 	private static void mergeSort(int[] array, int left, int right, int[] temp) {
 		if (left < right) {
 			int mid = left + (right - left) / 2;
@@ -92,7 +87,6 @@ public class BinaryArray {
 			merge(array, left, mid, right, temp);
 		}
 	}
-
 	private static void merge(int[] array, int left, int mid, int right, int[] temp) {
 		int i = left;
 		int j = mid + 1;
@@ -117,12 +111,10 @@ public class BinaryArray {
 		// 将临时数组中的元素复制到原数组：
 		copy(array, left, right, temp);
 	}
-
 	private static void copy(int[] array, int left, int right, int[] temp) {
 		int k = 0;
 		while (left <= right) {
 			array[left++] = temp[k++];
 		}
 	}
-
 }

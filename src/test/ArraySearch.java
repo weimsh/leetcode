@@ -5,13 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArraySearch {
-	// 算法1：给你一个 无重复元素 的整数数组 candidates 和一个目标整数 target ，
-	// 找出 candidates 中可以使数字和为目标数 target 的 所有 不同组合 ，并以列表形式返回。你可以按 任意顺序 返回这些组合。
-	// candidates 中的 同一个 数字可以 无限制重复被选取 。如果至少一个数字的被选数量不同，则两种组合是不同的。
+	// 算法1：给你一个 无重复元素 的整数数组candidates和一个目标整数target，
+	// 找出candidates中可以使数字和为目标数target的所有不同组合，并以列表形式返回。你可以按 任意顺序 返回这些组合。
+	// candidates中的同一个数字可以无限制重复被选取。如果至少一个数字的被选数量不同，则两种组合是不同的。
 
 	// 输入：candidates = [2,3,6,7], target = 7
-	// 输出：[[2,2,3],[7]]
-
+	// 输出：[[2,2,3], [7]]
 	private List<List<Integer>> ans;
 	private List<Integer> t;
 	private int[] candidates;
@@ -51,9 +50,9 @@ public class ArraySearch {
 		System.out.println(as.ans);
 	}
 
-	// 算法2：给定一个候选人编号的集合 candidates 和一个目标数 target ，
-	// 找出 candidates 中所有可以使数字和为 target 的组合。
-	// candidates 中的每个数字在每个组合中只能使用 一次 。
+	// 算法2：给定一个候选人编号的集合candidates和一个目标数target，
+	// 找出candidates中所有可以使数字和为target的组合。
+	// candidates中的每个数字在每个组合中只能使用一次。
 	// 注意：解集不能包含重复的组合。
 	private void search2(int[] candidates, int target) {
 		Arrays.sort(candidates);

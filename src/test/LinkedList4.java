@@ -6,7 +6,6 @@ public class LinkedList4 {
 	// 实现单链表排序
 	// 如：{-1,0,3,1,2} -> {-1,0,1,2,3}
 	// 要求：时间复杂度为O(nlogn)，空间复杂度为O(n)或者O(logn)。提示使用归并排序或者堆排序
-
 	public static void main(String[] args) {
 		Node n1 = new Node(-1);
 		n1.next = new Node(0);
@@ -25,7 +24,7 @@ public class LinkedList4 {
 		}
 	}
 
-	private static Node sort(Node n1) {// 堆排序
+	public static Node sort(Node n1) {// 堆排序
 		PriorityQueue<Node> queue = new PriorityQueue<Node>();
 		while (n1 != null) {
 			queue.offer(n1);
@@ -41,7 +40,7 @@ public class LinkedList4 {
 		return dummy.next;
 	}
 
-	private static Node sort2(Node n1) {// 归并排序
+	public static Node sort2(Node n1) {// 归并排序
 		if (n1 == null || n1.next == null) {
 			return n1;
 		}
@@ -83,7 +82,7 @@ public class LinkedList4 {
 		return dummy.next;
 	}
 
-	private static class Node implements Comparable<Node> {
+	public static class Node implements Comparable<Node> {
 		private int val;
 		private Node next;
 

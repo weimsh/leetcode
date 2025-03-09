@@ -7,7 +7,6 @@ public class LinkedList {
 	// 如：[{1,2,3}, {4,5,6,7}] -> {1,2,3,4,5,6,7}
 	// 如：[{1,2}, {1,4,5}, {6}] -> {1,1,2,4,5,6}
 	// 要求：时间复杂度为O(nlogn)，提示用最小堆
-
 	public static void main(String[] args) {
 		Node[] nodes = new Node[3];
 		Node n1 = new Node(1);
@@ -26,7 +25,7 @@ public class LinkedList {
 		}
 	}
 
-	private static Node merge(Node[] nodes) {
+	public static Node merge(Node[] nodes) {
 		PriorityQueue<Node> queue = new PriorityQueue<Node>();
 		for (Node node : nodes) {
 			queue.offer(node);
@@ -46,7 +45,7 @@ public class LinkedList {
 		return head.next;
 	}
 
-	private static class Node implements Comparable<Node> {
+	public static class Node implements Comparable<Node> {
 		private int val;
 		private Node next;
 
@@ -64,5 +63,4 @@ public class LinkedList {
 			return this.val - o.val;
 		}
 	}
-
 }

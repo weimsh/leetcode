@@ -4,7 +4,6 @@ public class LinkedList3 {
 	// 两个链表相加
 	// 如：[{9,3,7}, {6,3}] -> {1,0,0,0}
 	// 要求：时间和空间复杂度为O(n)
-
 	public static void main(String[] args) {
 		Node n1 = new Node(9);
 		n1.next = new Node(3);
@@ -23,7 +22,7 @@ public class LinkedList3 {
 		}
 	}
 
-	private static Node sum(Node n1, Node n2) {
+	public static Node sum(Node n1, Node n2) {
 		n1 = reverse(n1);
 		n2 = reverse(n2);
 		// println(n1);
@@ -55,7 +54,7 @@ public class LinkedList3 {
 		return prev;
 	}
 
-	private static class Node {
+	public static class Node {
 		private int val;
 		private Node next;
 
@@ -68,5 +67,4 @@ public class LinkedList3 {
 			return "" + val;
 		}
 	}
-
 }

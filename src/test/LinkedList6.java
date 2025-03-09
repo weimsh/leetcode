@@ -3,17 +3,6 @@ package test;
 public class LinkedList6 {
 	// 算法：给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点
 	// 要求：时间复杂度为O(n)，空间复杂度为O(1)。
-
-	public static Node toNode(int... values) {
-		Node dummy = new Node(0);
-		Node curr = dummy;
-		for (int val : values) {
-			curr.next = new Node(val);
-			curr = curr.next;
-		}
-		return dummy.next;
-	}
-
 	public static void main(String[] args) {
 		Node n1 = toNode(1, 2, 3, 4, 5);
 		//Node n3 = reverse(n1);
@@ -35,14 +24,7 @@ public class LinkedList6 {
 		return prev;
 	}
 
-	private static void println(Node n) {
-		while (n != null) {
-			System.out.println(n.val);
-			n = n.next;
-		}
-	}
-
-	private static Node swap(Node n1) {// 时间复杂度O(n)，空间复杂度O(n)
+	public static Node swap(Node n1) {// 时间复杂度O(n)，空间复杂度O(n)
 		Node dummy = new Node(0);
 		Node curr = dummy;
 
@@ -60,7 +42,7 @@ public class LinkedList6 {
 		return dummy.next;
 	}
 
-	private static Node swap2(Node n1) {// 时间复杂度O(n)，空间复杂度O(1)
+	public static Node swap2(Node n1) {// 时间复杂度O(n)，空间复杂度O(1)
 		Node dummy = new Node(0);
 		dummy.next = n1;
 		Node pre = dummy;
@@ -69,7 +51,7 @@ public class LinkedList6 {
 			Node t = cur.next;
 			cur.next = t.next;
 			t.next = cur;
-			
+
 			pre.next = t;
 			pre = cur;
 			cur = cur.next;
@@ -77,7 +59,24 @@ public class LinkedList6 {
 		return dummy.next;
 	}
 
-	private static class Node {
+	private static Node toNode(int... values) {
+		Node dummy = new Node(0);
+		Node curr = dummy;
+		for (int val : values) {
+			curr.next = new Node(val);
+			curr = curr.next;
+		}
+		return dummy.next;
+	}
+
+	private static void println(Node n) {
+		while (n != null) {
+			System.out.println(n.val);
+			n = n.next;
+		}
+	}
+
+	public static class Node {
 		private int val;
 		private Node next;
 
